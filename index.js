@@ -41,8 +41,8 @@ app.post('/webhook', function(req, res) {
                 if (message.message.text) {
                     var text = message.message.text;
                     if (text == 'hi' || text == "hello") {
-                        sendMessage(senderId, "a simple mermaid " + 'Hi cutie pie');
-                    } else { sendMessage(senderId, "a simple mermaid " + "Sorry, I do not understand anything"); }
+                        sendMessage(senderId, 'Hi cutie pie');
+                    } else { sendMessage(senderId, "Sorry, I do not understand anything, quynhhgoogoo is stupid. She has not upadated for me :("); }
                 }
             }
         }
