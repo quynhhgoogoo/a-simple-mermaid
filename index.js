@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/webhook', function(req, res) {
-    if (req.query['hub.verify_token'] === 'my_voice_is_my_password_verify_me') {
+    if (req.query['hub.verify_token'] === 'gauismermaid') {
         res.send(req.query['hub.challenge']);
     }
     res.send('Error, wrong validation token');
@@ -56,7 +56,7 @@ function sendMessage(senderId, message) {
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
         qs: {
-            access_token: "mã_truy_cập_trang",
+            access_token: "EAAF2L3AUE7ABADK4tcPtG7q944uiM108ZC8Hp5EDLqQg9eJ8ohzDujzh7vJVqznUZAF0rNGAeXm84u7coN5Hmwa3febYKBu55LAUCTuzn5VLWscZBUkKBa3V5IPCyLDQXFBtLwoGF97zavHG0dUZBzFvkiKZAzNXKTzSSkZBPxAwZDZD",
         },
         method: 'POST',
         json: {
