@@ -69,3 +69,14 @@ function sendMessage(senderId, message) {
         }
     });
 }
+
+function creativeBroadcastMessage(messageData) {
+   request({
+     url: 'https://graph.facebook.com/v2.11/me/message_creatives',
+     qs: { 
+		access_token: process.env.PAGE_ACCESS_TOKEN 
+	 },
+     method: 'POST',
+     json: messageData     
+   }
+}
