@@ -78,5 +78,5 @@ function creativeBroadcastMessage(messageData) {
 	 },
      method: 'POST',
      json: messageData     
-   }
+   })
 }
