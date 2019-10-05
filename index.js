@@ -8,6 +8,10 @@ var express = require('express');
 var request = require('request');
 var router = express();
 
+var fs = require('fs');
+var path = require('path');
+var FB_TOKEN = fs.readFileSync(path.join(__dirname, './token.txt')).toString();
+
 var app = express();
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -56,7 +60,7 @@ function sendMessage(senderId, message) {
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
         qs: {
-            access_token: "EAAF2L3AUE7ABADK4tcPtG7q944uiM108ZC8Hp5EDLqQg9eJ8ohzDujzh7vJVqznUZAF0rNGAeXm84u7coN5Hmwa3febYKBu55LAUCTuzn5VLWscZBUkKBa3V5IPCyLDQXFBtLwoGF97zavHG0dUZBzFvkiKZAzNXKTzSSkZBPxAwZDZD",
+            access_token: FB_TOKEN,
         },
         method: 'POST',
         json: {
@@ -74,7 +78,7 @@ function creativeBroadcastMessage(messageData) {
    request({
      url: 'https://graph.facebook.com/v2.11/me/message_creatives',
      qs: { 
-		access_token:  "EAAF2L3AUE7ABADK4tcPtG7q944uiM108ZC8Hp5EDLqQg9eJ8ohzDujzh7vJVqznUZAF0rNGAeXm84u7coN5Hmwa3febYKBu55LAUCTuzn5VLWscZBUkKBa3V5IPCyLDQXFBtLwoGF97zavHG0dUZBzFvkiKZAzNXKTzSSkZBPxAwZDZD",
+		access_token: FB_TOKEN,
 	 },
      method: 'POST',
      json: messageData     
